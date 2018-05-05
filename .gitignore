@@ -1,0 +1,11 @@
+# npm
+node_modules
+dist
+
+# Project
+fonts
+vendor
+
+# Other
+.idea
+other

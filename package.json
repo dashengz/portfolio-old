@@ -1,0 +1,31 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "description": "Jonathan Dasheng Zhang - Portfolio",
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Jonathan Dasheng Zhang",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.4.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.6.1",
+    "cssnano": "^3.10.0",
+    "cssnano-preset-advanced": "^4.0.0-rc.2",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-css-url-adjuster": "^0.2.3",
+    "gulp-google-webfonts": "^1.0.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "node-sass": "^4.9.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0"
+  }
+}
