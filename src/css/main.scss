@@ -49,11 +49,11 @@ header {
     top: 0;
     left: 0;
     z-index: 10;
+    padding-top: 15vh;
     background-color: #ffffff;
     box-shadow: 0 3px 6px 3px rgba(0, 0, 0, .08);
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     .header {
         &-icon {
             text-align: center;
@@ -65,6 +65,7 @@ header {
             }
         }
         &-nav {
+            margin-top: 5vh;
             ul {
                 display: block;
                 list-style: none;
@@ -117,22 +118,25 @@ header {
         width: 0;
     }
     > section {
-        padding: 48px;
         position: relative;
+        padding: 0 48px;
+        height: 100vh;
     }
 }
 
 .jumbo {
-    position: relative;
     width: 700px;
-    margin-top: 200px;
-    p {
-        font-size: 40px;
-        font-weight: bold;
-        margin: 0 0 20px 0;
-        &.feature {
-            color: $orange-theme;
-            font-weight: 400;
+    padding-top: 25vh;
+    &-inner {
+        position: relative;
+        p {
+            font-size: 40px;
+            font-weight: bold;
+            margin: 0 0 20px 0;
+            &.feature {
+                color: $orange-theme;
+                font-weight: 400;
+            }
         }
     }
 }

@@ -13,13 +13,6 @@ const detectIE = () => {
 
 if (detectIE()) document.body.classList.add('ie');
 
-// Set home height to window height on load
-const PADDING_HOME = 48;
-(function (padding) {
-    const HOME = document.getElementById('home');
-    HOME.style.height = (window.innerHeight - padding * 2) + 'px';
-})(PADDING_HOME);
-
 // Flick through the featured texts in jumbo
 (function () {
     const JUMBO = document.getElementById('jumbo-feature');
