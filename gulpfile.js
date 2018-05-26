@@ -10,12 +10,31 @@ const cssnano = require('cssnano');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const adjuster = require('gulp-css-url-adjuster');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const log = require('gulplog');
+const del = require('del');
+
 
 const processJs = () =>
-    gulp.src('src/js/main.js')
+    gulp.src(['src/js/**/*'])
         .pipe(babel())
-        .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
+
+const processModules = () =>
+    browserify({
+        entries: 'dist/js/main.js',
+        debug: true
+    }).bundle()
+        .pipe(source('src/page/*.js'))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(uglify())
+        .on('error', log.error)
+        .pipe(rename('main.js'))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('./dist/js/'));
 
 const getFonts = () =>
     gulp.src('./fonts.list')
@@ -62,8 +81,11 @@ const copyProjectFiles = () =>
     gulp.src(['src/manifest.json', 'src/*.html'])
         .pipe(gulp.dest('dist'));
 const copyProjectFolders = () =>
-    gulp.src(['src/favicon/**/*', 'src/img/**/*', 'src/fonts/**/*.woff'], { base: 'src' })
+    gulp.src(['src/favicon/**/*', 'src/img/**/*', 'src/fonts/**/*.woff'], {base: 'src'})
         .pipe(gulp.dest('dist'));
+
+const clean = () =>
+    del('dist/js/page/**', {force: true});
 
 const build = gulp.parallel(
     gulp.series(
@@ -73,6 +95,6 @@ const build = gulp.parallel(
         processCss,
         gulp.parallel(copyCss, copyProjectFiles, copyProjectFolders)
     ),
-    processJs
+    gulp.series(processJs, processModules, clean)
 );
 gulp.task('default', build);
