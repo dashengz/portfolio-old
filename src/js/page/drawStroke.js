@@ -37,6 +37,7 @@ export const DrawStroke = (function () {
             const delay = totalDelay;
             totalDelay += time;
             this.css += format(this.TEMPLATE_CSS, {
+                id: this.options.id,
                 len: len,
                 time: time,
                 delay: delay,
@@ -56,7 +57,7 @@ export const DrawStroke = (function () {
     };
 
     DrawStroke.prototype.TEMPLATE_CSS = `
-        #signature path:nth-child({{index}}) {
+        #{{id}} path:nth-child({{index}}) {
             stroke-dasharray: {{len}};
             stroke-dashoffset: {{len}};
             -webkit-animation: dash-{{index}} {{time}}s {{delay}}s linear forwards;

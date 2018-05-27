@@ -14,6 +14,6 @@ const _animateText = new AnimateText({
 
 // Signature strokes
 const _drawSignature = new DrawStroke({
-    id: 'signature'
+    id: 'signature-zh'
 });
 if (_drawSignature.isEnabled()) _drawSignature.init();
