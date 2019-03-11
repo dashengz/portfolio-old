@@ -1,36 +1,43 @@
 {
-  "name": "portfolio",
-  "version": "0.2.0",
-  "description": "Jonathan Dasheng Zhang - Portfolio",
-  "keywords": [
-    "portfolio"
-  ],
-  "author": "Jonathan Dasheng Zhang",
-  "license": "ISC",
-  "devDependencies": {
-    "autoprefixer": "^8.4.1",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.6.1",
-    "browserify": "^16.2.2",
-    "cssnano": "^3.10.0",
-    "cssnano-preset-advanced": "^4.0.0-rc.2",
-    "del": "^3.0.0",
-    "gulp": "^4.0.0",
-    "gulp-babel": "^7.0.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-css-url-adjuster": "^0.2.3",
-    "gulp-google-webfonts": "^1.0.0",
-    "gulp-postcss": "^7.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^4.0.1",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.0",
-    "gulplog": "^1.0.0",
-    "node-sass": "^4.9.0",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
-  },
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "normalize.css": "^8.0.0"
+    "gatsby": "^2.1.27",
+    "gatsby-image": "^2.0.31",
+    "gatsby-plugin-manifest": "^2.0.22",
+    "gatsby-plugin-offline": "^2.0.24",
+    "gatsby-plugin-react-helmet": "^3.0.8",
+    "gatsby-plugin-sharp": "^2.0.25",
+    "gatsby-source-filesystem": "^2.0.23",
+    "gatsby-transformer-sharp": "^2.1.15",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.16.4"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
